@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import javax.annotation.Nullable;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 
@@ -12,7 +13,7 @@ public class Company extends AbstractEntity {
     @NotBlank
     private String name;
 
-    @OneToMany(mappedBy = "company")
+    @OneToMany(mappedBy = "company", fetch = FetchType.EAGER)
     @Nullable
     private List<Contact> employees = new LinkedList<>();
 

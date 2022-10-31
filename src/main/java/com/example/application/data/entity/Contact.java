@@ -1,6 +1,8 @@
 package com.example.application.data.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,6 +14,7 @@ import javax.validation.constraints.NotNull;
 public class Contact extends AbstractEntity {
 
     @NotEmpty
+    @Column(name = "first_name")
     private String firstName = "";
 
     @NotEmpty
